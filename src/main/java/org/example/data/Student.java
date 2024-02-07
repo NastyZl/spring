@@ -29,7 +29,7 @@ public class Student {
     }
 
     public void init() {
-        this.isEnrolled = this.getAverageMark() >= Mark.SATISFACTORY.getValue();
+        this.isEnrolled = this.getAverageMark() > Mark.SATISFACTORY.getValue();
     }
 
     public Double getAverageMark() {
