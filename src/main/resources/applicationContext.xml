@@ -54,4 +54,6 @@
             </map>
         </constructor-arg>
     </bean>
+
+    <bean class="org.example.ImproveMarksBeanPostProcessor"/>
 </beans>

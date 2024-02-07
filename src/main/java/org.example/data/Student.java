@@ -10,6 +10,11 @@ import java.util.Map;
 public class Student {
     private String name;
     private Map<Subject, Mark> reportCard;
+
+    public Map<Subject, Mark> getReportCard() {
+        return reportCard;
+    }
+
     private boolean isEnrolled = false;
 
     public Student(String name, Map<Subject, Mark> reportCard) {
@@ -20,10 +25,12 @@ public class Student {
     public String getName() {
         return name;
     }
+
     public void init() {
         this.isEnrolled = this.getAverageMark() >= Mark.SATISFACTORY.getValue();
-        System.out.println("init " + this.isEnrolled +" "+this.name);
+        System.out.println("init " + this.isEnrolled + " " + this.name);
     }
+
     public Double getAverageMark() {
         return reportCard.values().stream()
                 .mapToDouble(Mark::getValue)
