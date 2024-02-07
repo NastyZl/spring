@@ -2,58 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:student.properties"/>
+
     <context:component-scan base-package="org.example"/>
 
-    <bean id="studentIvan" class="org.example.data.Student"
-            init-method="init">
-        <constructor-arg name="name" value="Ivan"/>
-        <constructor-arg name="reportCard">
-            <map key-type="org.example.data.report_card.Subject" value-type="org.example.data.report_card.Mark">
-                <entry key="ALGEBRA" value="GOOD"/>
-                <entry key="COMPUTER_SCIENCE" value="GOOD"/>
-                <entry key="ECONOMICS" value="GOOD"/>
-                <entry key="GEOMETRY" value="GOOD"/>
-                <entry key="PHYSICS" value="GOOD"/>
-                <entry key="TECHNICAL_DRAWING" value="GOOD"/>
-            </map>
-        </constructor-arg>
+    <bean id="studentJil" class="org.example.data.Student"
+          init-method="init">
+        <constructor-arg name="name" value="${studentJil.name}"/>
+        <constructor-arg name="reportCard" value="#{${studentJil.reportCard}}"/>
     </bean>
 
-    <bean id="studentJil" class="org.example.data.Student"
-            init-method="init">
-        <constructor-arg name="name" value="Jil"/>
-        <constructor-arg name="reportCard">
-            <map key-type="org.example.data.report_card.Subject" value-type="org.example.data.report_card.Mark">
-                <entry key="ALGEBRA" value="FAIL"/>
-                <entry key="COMPUTER_SCIENCE" value="FAIL"/>
-                <entry key="ECONOMICS" value="FAIL"/>
-                <entry key="GEOMETRY" value="FAIL"/>
-                <entry key="PHYSICS" value="FAIL"/>
-                <entry key="TECHNICAL_DRAWING" value="FAIL"/>
-            </map>
-        </constructor-arg>
+    <bean id="studentIvan" class="org.example.data.Student"
+          init-method="init">
+        <constructor-arg name="name" value="${studentIvan.name}"/>
+        <constructor-arg name="reportCard" value="#{${studentIvan.reportCard}}"/>
     </bean>
 
     <bean id="studentSasha" class="org.example.data.Student"
-            init-method="init">
-        <constructor-arg name="name" value="Sasha"/>
-        <constructor-arg name="reportCard">
-            <map key-type="org.example.data.report_card.Subject" value-type="org.example.data.report_card.Mark">
-                <entry key="ALGEBRA" value="GOOD"/>
-                <entry key="COMPUTER_SCIENCE" value="GOOD"/>
-                <entry key="ECONOMICS" value="GOOD"/>
-                <entry key="GEOMETRY" value="GOOD"/>
-                <entry key="PHYSICS" value="GOOD"/>
-                <entry key="TECHNICAL_DRAWING" value="GOOD"/>
-            </map>
-        </constructor-arg>
+          init-method="init">
+        <constructor-arg name="name" value="${studentSasha.name}"/>
+        <constructor-arg name="reportCard" value="#{${studentSasha.reportCard}}"/>
     </bean>
 
-    <bean class="org.example.ImproveMarksBeanPostProcessor"/>
+    <bean class="org.example.config.ImproveMarksBeanPostProcessor"/>
 </beans>

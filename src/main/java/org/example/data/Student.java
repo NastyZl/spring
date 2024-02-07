@@ -5,6 +5,7 @@ import org.example.data.report_card.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.EnumMap;
 import java.util.Map;
 
 public class Student {
@@ -26,9 +27,12 @@ public class Student {
         return name;
     }
 
+    public void setReportCard(Map<Subject, Mark> reportCard) {
+        this.reportCard = reportCard;
+    }
+
     public void init() {
         this.isEnrolled = this.getAverageMark() >= Mark.SATISFACTORY.getValue();
-        System.out.println("init " + this.isEnrolled + " " + this.name);
     }
 
     public Double getAverageMark() {

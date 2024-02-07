@@ -7,7 +7,8 @@ public enum Mark {
     FAIL(2d),
     ;
     private Double value;
-    Mark (Double value){
+
+    Mark(Double value) {
         this.value = value;
     }
 
