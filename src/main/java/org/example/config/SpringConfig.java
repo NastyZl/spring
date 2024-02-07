@@ -1,8 +1,8 @@
 package org.example.config;
 
 import org.example.data.Student;
-import org.example.data.report_card.Mark;
-import org.example.data.report_card.Subject;
+import org.example.data.enums.Mark;
+import org.example.data.enums.Subject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.*;

@@ -14,6 +14,5 @@ public class TestSpring {
         AnnotationConfigApplicationContext contextJava = new AnnotationConfigApplicationContext(SpringConfig.class);
         Teacher teacherJava = contextJava.getBean("teacher", Teacher.class);
         teacherJava.getStudents().forEach(System.out::println);
-
     }
 }

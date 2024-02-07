@@ -1,7 +1,7 @@
 package org.example.data;
 
-import org.example.data.report_card.Mark;
-import org.example.data.report_card.Subject;
+import org.example.data.enums.Mark;
+import org.example.data.enums.Subject;
 
 import java.util.Map;
 
@@ -32,9 +32,9 @@ public class Student {
         this.isEnrolled = this.getAverageMark() > Mark.SATISFACTORY.getValue();
     }
 
-    public Double getAverageMark() {
+    public double getAverageMark() {
         return reportCard.values().stream()
-                .mapToDouble(Mark::getValue)
+                .mapToInt(Mark::getValue)
                 .average()
                 .orElse(0);
     }

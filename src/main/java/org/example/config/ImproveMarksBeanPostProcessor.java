@@ -1,7 +1,7 @@
 package org.example.config;
 
 import org.example.data.Student;
-import org.example.data.report_card.Mark;
+import org.example.data.enums.Mark;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
@@ -21,10 +21,5 @@ public class ImproveMarksBeanPostProcessor implements BeanPostProcessor {
             }
         }
         return bean;
-    }
-
-    @Bean
-    public ImproveMarksBeanPostProcessor improveMarksBeanPostProcessor() {
-        return new ImproveMarksBeanPostProcessor();
     }
 }

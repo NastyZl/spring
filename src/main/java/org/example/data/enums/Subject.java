@@ -1,4 +1,4 @@
-package org.example.data.report_card;
+package org.example.data.enums;
 
 public enum Subject {
     GEOMETRY,
