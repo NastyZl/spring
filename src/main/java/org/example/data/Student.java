@@ -2,10 +2,7 @@ package org.example.data;
 
 import org.example.data.report_card.Mark;
 import org.example.data.report_card.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.util.EnumMap;
 import java.util.Map;
 
 public class Student {
