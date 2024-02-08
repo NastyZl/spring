@@ -4,9 +4,9 @@ import org.example.data.Student;
 import org.example.data.enums.Mark;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
 
 public class ImproveMarksBeanPostProcessor implements BeanPostProcessor {
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof Student && ((Student) bean).getName().equals("Jil")) {
@@ -22,4 +22,10 @@ public class ImproveMarksBeanPostProcessor implements BeanPostProcessor {
         }
         return bean;
     }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
+    }
+
 }
