@@ -4,13 +4,12 @@ import org.example.data.Student;
 import org.example.data.enums.Mark;
 import org.example.data.enums.Subject;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.*;
 
 import java.util.Map;
 
 @Configuration
-@ComponentScan(basePackages = {"org.example.data"})
+@ComponentScan(basePackages = {"org.example"})
 @PropertySource("classpath:student.properties")
 public class SpringConfig {
     @Bean(initMethod = "init")
@@ -32,7 +31,7 @@ public class SpringConfig {
     }
 
     @Bean
-    public BeanPostProcessor improveMarksBeanPostProcessor() {
+    public ImproveMarksBeanPostProcessor improveMarksBeanPostProcessor() {
         return new ImproveMarksBeanPostProcessor();
     }
 
